@@ -1,0 +1,29 @@
+.cuties{
+    margin-top: 100px;
+    margin-left: 80px;
+    --cutie-count:10;
+    --cuitie-size: 135px;
+    --column-size: calc(var(--cuitie-size)/2);
+    display: grid;
+    grid-template-columns: repeat(var(--cutie-count),var(--column-size));
+    transition: grid-template-columns 200ms;
+}
+.cutie{
+    width: var(--cuitie-size);
+    aspect-ratio: 1;
+    border-radius: 100vw;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: .25rem .25rem .5rem hsl(0 0% 0% / .2);
+
+    transition: scale 200ms;
+} 
+.cuties:hover,
+.cuties:focus-within{
+    --column-size: calc(var(--cuitie-size)*1.5);
+
+}
+.cutie:hover,
+.cutie:focus{
+    scale: 2;
+}
